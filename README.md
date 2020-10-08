@@ -26,7 +26,7 @@ install requirements with below commad
     python getSub.py
     
 2 - enter address of movies directory
-for example if your in myfilm (directory/folder)
+for example if your movies in myfilm (directory/folder)
 
     M:\myfilm
     
