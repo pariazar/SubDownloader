@@ -8,7 +8,7 @@ output : movies with subtitles
 <h3>features</h3>
     Download subtitles without search name of all movies in the internet
     
-   easy to use
+   it will automatically download subtitle of all movies and easy to use
  
  <h2>Download project</h2>
 download program with below commad
