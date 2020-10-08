@@ -193,7 +193,7 @@ def main():
     for root, dirs, files in os.walk(path):
         for filename in files:
             #print(os.path.join(root, filename))
-            if(".mkv" in filename and (newpath not in (os.path.join(root, filename)))):  
+            if((".mkv" in filename or ".mp4" in filename) and (newpath not in (os.path.join(root, filename)))):  
                 correctName = correctInput(filename)
                 createDirectory(path,newpath+filename)
 
