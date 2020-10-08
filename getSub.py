@@ -1,3 +1,7 @@
+'''Developed by Hamed Pariazar 2020
+https://github.com/hamedpa
+email : hamedpa21@gmail.com'''
+
 import imdb 
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
