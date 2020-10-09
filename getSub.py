@@ -181,7 +181,7 @@ def main():
     print("Welecome to subDownloader 2020 - Download all subtitles without any trouble ")
     print("Please enter address of movies: ")
     path = input() #"M:\\myfilm"
-    newpath = "movie\\"
+    newpath = "movie_with_sub\\"
     with open('websites.json') as json_file:
                 data = json.load(json_file)
                 for p in data['websites']:
@@ -200,17 +200,19 @@ def main():
                 # Move a file by renaming it's path
                 os.rename(os.path.join(root, filename),path+"\\"+newpath+filename+"\\"+filename)          
                 for c in range(len(currentLink)):
+                    try:
+                        print("Download subtitle of "+correctName+" from server "+str((c+1))+" ...")
+                        if(not getSubLink(correctName,currentLink[c],keyword[c],str(afterlink[c])) ==[]):
+                            result1 = getSubLink(correctName,currentLink[c],keyword[c],str(afterlink[c]))[0]
+                            if("p" in result1[len(result1):]):
+                                downloadSub(result1,path+"\\"+newpath+filename+'\\'+filename+" "+str(c)+".zip")
+                            else:
+                                downloadSub(result1,path+"\\"+newpath+filename+'\\'+filename+" "+str(c)+".rar")
+                            print("Subtitle of "+correctName+" Downloaded successfully")
                     
-                    print("Download subtitle of "+correctName+" from server "+str((c+1))+" ...")
-                    if(not getSubLink(correctName,currentLink[c],keyword[c],str(afterlink[c])) ==[]):
-                        result1 = getSubLink(correctName,currentLink[c],keyword[c],str(afterlink[c]))[0]
-                        if("p" in result1[len(result1):]):
-                            downloadSub(result1,path+"\\"+newpath+filename+'\\'+filename+" "+str(c)+".zip")
-                        else:
-                            downloadSub(result1,path+"\\"+newpath+filename+'\\'+filename+" "+str(c)+".rar")
-                        print("Subtitle of "+correctName+" Downloaded successfully")
-                
-                    print()
+                        print()
+                    except:
+                        print
                         
                 else:
                     print()
